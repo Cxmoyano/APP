@@ -1,0 +1,71 @@
+﻿<link rel="stylesheet" href="public/html/bootstrap/css/bootstrap.min.css">
+ <link rel="stylesheet" href="public/css/font-awesome-4.5.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="public/css/ionicons-2.0.1/css/ionicons.min.css">
+<link rel="stylesheet" href="public/html/dist/css/AdminLTE.min.css">
+<link rel="stylesheet" href="public/html/dist/css/skins/_all-skins.min.css">
+<link rel="stylesheet" href="public/html/plugins/iCheck/flat/blue.css">
+<link rel="stylesheet" href="public/html/plugins/morris/morris.css">
+<link rel="stylesheet" href="public/html/plugins/jvectormap/jquery-jvectormap-1.2.2.css">
+<link rel="stylesheet" href="public/html/plugins/datepicker/datepicker3.css">
+<link rel="stylesheet" href="public/html/plugins/daterangepicker/daterangepicker-bs3.css">
+<link rel="stylesheet" href="public/html/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css">
+<script src="public/jquery/cloud/jquery-ui.min.js"></script>
+<script src="public/html/bootstrap/js/bootstrap.min.js"></script>
+<script src="public/jquery/cloud/raphael-min.js"></script>
+<script src="public/html/plugins/sparkline/jquery.sparkline.min.js"></script>
+<script src="public/html/plugins/jvectormap/jquery-jvectormap-1.2.2.min.js"></script>
+<script src="public/html/plugins/jvectormap/jquery-jvectormap-world-mill-en.js"></script>
+<script src="public/html/plugins/knob/jquery.knob.js"></script>
+<script src="public/jquery/cloud/moment.min.js"></script>
+<script src="public/html/plugins/daterangepicker/daterangepicker.js"></script>
+<script src="public/html/plugins/datepicker/bootstrap-datepicker.js"></script>
+<script src="public/html/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.min.js"></script>
+<script src="public/html/plugins/slimScroll/jquery.slimscroll.min.js"></script>
+<script src="public/html/plugins/fastclick/fastclick.min.js"></script>
+<script src="public/html/dist/js/app.min.js"></script>
+<script src="public/html/dist/js/demo.js"></script>
+<link rel="stylesheet" href="public/html/plugins/fullcalendar/fullcalendar.min.css">
+<link rel="stylesheet" href="public/html/plugins/fullcalendar/fullcalendar.print.css" media="print">
+<script src="public/html/plugins/fullcalendar/fullcalendar.min.js"></script>
+<script src="public/jquery/sync/index.js"></script>
+<script src="public/jquery/jquery.cookie.js"></script>
+<script>
+    function calculoPreg(pagina) {
+        if ($('form input[type=radio]:checked').val().indexOf("RFID_") >= 0) {
+            $.cookie("RFID_", parseInt($.cookie("RFID_")) + parseInt($('form input[type=radio]:checked').val().replace("RFID_", "")));
+        }
+        if ($('form input[type=radio]:checked').val().indexOf("CB_") >= 0) {
+            $.cookie("CB_", parseInt($.cookie("CB_")) + parseInt($('form input[type=radio]:checked').val().replace("CB_", "")));
+        }
+        if ($('form input[type=radio]:checked').val().indexOf("QR_") >= 0) {
+            $.cookie("QR_", parseInt($.cookie("QR_")) + parseInt($('form input[type=radio]:checked').val().replace("QR_", "")));
+        }
+        contentPage(pagina);
+    }
+</script>
+
+<div class="container">
+    <div class="btn-group btn-group-justified" role="group" aria-label="..."  style='margin-bottom: 5px; margin-top: 0px;'>
+    <div class="btn-group" role="group" aria-label="..."><img src="public/images/logoSDT.png" style='width:50%; padding-bottom:10px;'></div>
+    <div class="btn-group" role="group" aria-label="..." style="text-align:right; font-size:14px;"><strong style='font-size:15px; color:#FFF;'><img src="public/images/QR_SDT.png" style='width:10%;'></strong></div></div>
+    <hr />
+    <form>
+
+
+    <!--EDITAR PREGUNTA-->
+    <h1 style="color:#FFF; text-decoration:underline">¿La presentación de sus productos es en empaques individuales por docenas, al por mayor o combinados?</h1>
+    <br/>
+
+    <!--EDITAR OPCIONES-->
+    <h3 style="color:#FFF">
+    <input type="radio" name="opcion" value="RFID_10" checked> Empaques individuales.<br/><br/>
+    <input type="radio" name="opcion" value="CB_5" > Empaques individuales y al por mayor.<br/><br/>
+    <input type="radio" name="opcion" value="QR_2" > Empaques individuales, por docenas y al por mayor.<br/><br/>
+    </h3>
+
+    <!--EDITAR EL SIGUIENTE HTML QUE CONTINUA-->
+    <br/>
+    <a href="#" onclick="calculoPreg('pages/pregunta8.html');" class="btn btn-block btn-social btn-tumblr btn-flat"><i class="fa fa-ellipsis-h"></i> <span>Siguiente</span></a>
+    </form>
+</div>
+    
